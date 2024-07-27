@@ -1,4 +1,4 @@
-# Functions to create and validate IMO numbers.
+# Functions to create and validate IMO numbers
 
 A couple of functions to validate **IMO numbers**. The IMO number of the International Maritime Organization is a generic term covering two distinct meanings. The IMO ship identification number is a unique ship identifier; the IMO company and registered owner identification number is used to identify uniquely each company and/or registered owner managing ships of at least 100 gross tons (gt). The schemes are managed in parallel, but IMO company/owner numbers may also be obtained by managers of vessels not having IMO ship numbers. IMO numbers were introduced to improve maritime safety and reduce fraud and pollution, under the International Convention for the Safety of Life at Sea (SOLAS).[1][2]
 
