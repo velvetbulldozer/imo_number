@@ -13,6 +13,7 @@ from typing import List
 # functions #
 #############
 
+
 def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
     """The desired amount of IMO numbers that need to be generated.
     Optional to change output to strings.
@@ -39,6 +40,7 @@ def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
         return number
     
     else:
+        number = [str(item) for item in number] 
         return number
         
 
@@ -55,34 +57,41 @@ def create_number() -> int:
     return number
 
 
-def imo_number_validator(number: int, output_as_int: bool = True) -> [int|str]:
+def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int|str:
     """Validates an IMO number and returns number if valid. 
     If invalid returns None. Optional to change output to strings.
     
     Args:
-        number (int): A possible IMO number.
-        output_as_int (bool, optional): _description_. Defaults to True.
+        imo_number (int|str): A possible IMO number.
+        output_as_int (bool, optional): False to change output to strings. Defaults to True.
 
     Returns:
         [int|str]: An IMO number if valid.   
     """
     
     try:
-        imo_int = int(number)
-        imo_str = str(number)
-
-        imo_checksum = (int(imo_str[-7]) *7) + (int(imo_str[-6]) *6) + (int(imo_str[-5]) *5) + (int(imo_str[-4]) *4) + (int(imo_str[-3]) *3) + (int(imo_str[-2]) *2)
-
-        if str(imo_checksum)[-1] == imo_str[-1]:
+        imo_int = int(imo_number)
+        imo_str = str(imo_number).strip()
+        
+        if len(imo_str) == 7:
             
-            if output_as_int:
-                return imo_int
+            imo_checksum = (int(imo_str[-7]) * 7) + \
+                (int(imo_str[-6]) * 6) + \
+                    (int(imo_str[-5]) * 5) + \
+                        (int(imo_str[-4]) * 4) + \
+                        (int(imo_str[-3]) * 3) + \
+                            (int(imo_str[-2]) * 2)
+
+            if str(imo_checksum)[-1] == imo_str[-1]:
+                
+                if output_as_int:
+                    return imo_int
+                
+                else:
+                    return imo_str
             
             else:
-                return imo_str
-        
-        else:
-            pass
+                pass
     
     except (ValueError, IndexError) as e:
         pass
@@ -93,7 +102,15 @@ def imo_number_validator(number: int, output_as_int: bool = True) -> [int|str]:
 #########
 
 imo_numbers  = desired_amount(12, False)
-print(f"list of IMO numbers: {imo_numbers}")
+print(imo_numbers)
 
-validated_number = imo_number_validator('9582960', False)
+imo_numbers  = desired_amount(12, True)
+print(imo_numbers)    
+
+validated_number = imo_number_validator('9582960', True)
 print(f"Valid IMO number: {validated_number}")
+print(f"Valid IMO number: {type(validated_number)}")
+
+validated_number = imo_number_validator(9582960, False)
+print(f"Valid IMO number: {validated_number}")
+print(f"Valid IMO number: {type(validated_number)}")
