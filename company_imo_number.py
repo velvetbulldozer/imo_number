@@ -16,7 +16,7 @@ from typing import List
 
 
 def comp_imo_number_validator(comp_imo_number: int|str, output_as_int: bool = True) -> int|str:
-    """Validates a Company IMO number and returns number if valid. 
+    """ Validates a Company IMO number and returns number if valid. 
     If invalid returns None. Optional to change output to strings.
     
     Args:

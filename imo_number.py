@@ -16,7 +16,7 @@ from typing import List
 
 
 def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
-    """The desired amount of IMO numbers that need to be generated.
+    """ The desired amount of IMO numbers that need to be generated.
     Optional to change output to strings.
 
     Args:
@@ -59,7 +59,7 @@ def create_number() -> int:
 
 
 def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int|str:
-    """Validates an IMO number and returns number if valid. 
+    """ Validates an IMO number and returns number if valid. 
     If invalid returns None. Optional to change output to strings.
     
     Args:
