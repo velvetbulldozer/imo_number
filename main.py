@@ -13,7 +13,7 @@ from typing import List
 # functions #
 #############
 
-def desired_amount(amount : int, output_as_int=True) -> List[int|str]:
+def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
     """The desired amount of IMO numbers that need to be generated.
     Optional to change output to strings.
 
@@ -55,15 +55,16 @@ def create_number() -> int:
     return number
 
 
-def imo_number_validator(number :int) -> int:
-    """Validates an IMO number and returns number if valid.
-    If invalid returns None.
-
+def imo_number_validator(number: int, output_as_int: bool = True) -> [int|str]:
+    """Validates an IMO number and returns number if valid. 
+    If invalid returns None. Optional to change output to strings.
+    
     Args:
         number (int): A possible IMO number.
+        output_as_int (bool, optional): _description_. Defaults to True.
 
     Returns:
-        int: The valid IMO number if valid.
+        [int|str]: An IMO number if valid.   
     """
     
     try:
@@ -73,7 +74,12 @@ def imo_number_validator(number :int) -> int:
         imo_checksum = (int(imo_str[-7]) *7) + (int(imo_str[-6]) *6) + (int(imo_str[-5]) *5) + (int(imo_str[-4]) *4) + (int(imo_str[-3]) *3) + (int(imo_str[-2]) *2)
 
         if str(imo_checksum)[-1] == imo_str[-1]:
-            return imo_str
+            
+            if output_as_int:
+                return imo_int
+            
+            else:
+                return imo_str
         
         else:
             pass
@@ -86,8 +92,8 @@ def imo_number_validator(number :int) -> int:
 # USAGE #
 #########
 
-imo_numbers  = desired_amount(12)
+imo_numbers  = desired_amount(12, False)
 print(f"list of IMO numbers: {imo_numbers}")
 
-validated_number = imo_number_validator('9582960')
+validated_number = imo_number_validator('9582960', False)
 print(f"Valid IMO number: {validated_number}")
