@@ -12,7 +12,7 @@ source: https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_vessel
 
 # Validate Company IMO numbers
 
-The checksum of an IMO company and registered owner identification number is calculated somewhat differently. The first six digits are multiplied by the respective weights: ''8'', ''6'', ''4'', ''2'', ''9'', and ''7'' and then summed. From this sum modulo 11 is taken. The result of which is subtracted from 11. And [[modulo]] 10 of this difference results in the check digit.
+The checksum of an IMO company and registered owner identification number is calculated somewhat differently. The first six digits are multiplied by the respective weights: ''8'', ''6'', ''4'', ''2'', ''9'', and ''7'' and then summed. From this sum modulo 11 is taken. The result of which is subtracted from 11. And modulo 10 of this difference results in the check digit.
 
 source: https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_company
 
