@@ -2,6 +2,7 @@
 # packages #
 ############
 
+
 # random integer generation
 from random import randint
 
@@ -58,6 +59,7 @@ def comp_imo_number_validator(comp_imo_number: int|str, output_as_int: bool = Tr
 #########
 # USAGE #
 ######### 
+
 
 validated_number = comp_imo_number_validator(9074729, True)
 print(f"Valid company IMO number: {validated_number}")

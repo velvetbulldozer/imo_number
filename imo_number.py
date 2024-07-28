@@ -2,6 +2,7 @@
 # packages #
 ############
 
+
 # random integer generation
 from random import randint
 
@@ -100,6 +101,7 @@ def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int
 #########
 # USAGE #
 #########
+
 
 imo_numbers  = desired_amount(12, False)
 print(imo_numbers)
