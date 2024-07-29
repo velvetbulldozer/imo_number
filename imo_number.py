@@ -16,7 +16,7 @@ from typing import List
 
 
 def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
-    """ The desired amount of IMO numbers that need to be generated.
+    """ The desired amount of IMO numbers to be generated.
     Optional to change output to strings.
 
     Args:
@@ -25,37 +25,37 @@ def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
         Defaults to True = integers.
 
     Returns:
-        List[int]: List with IMO numbers as integers or strings.
+        List[int|str]: List with IMO numbers as integers or strings.
     """
   
-    number = []
+    imo_number = []
     
-    while len(number) < amount:
-        created_number = create_number()
+    while len(imo_number) < amount:
+        created_imo_number = create_imo_number()
         
-        if created_number != None:
-            number.append(created_number)
+        if created_imo_number != None:
+            imo_number.append(created_imo_number)
     
     if output_as_int: 
-        number = [int(item) for item in number] 
-        return number
+        imo_number = [int(item) for item in imo_number] 
+        return imo_number
     
     else:
-        number = [str(item) for item in number] 
-        return number
+        imo_number = [str(item) for item in imo_number] 
+        return imo_number
         
 
-def create_number() -> int:
-    """ Creates a seven digit valid IMO number 
-    between the range 5000000 and 9999999.
+def create_imo_number() -> int:
+    """ Creates a seven digit valid IMO number.
+    Between range 5000000 and 9999999.
 
     Returns:
         int: A seven digit valid IMO number.
     """
     
     number = randint(5000000,9999999)
-    number = imo_number_validator(number)
-    return number
+    imo_number = imo_number_validator(number)
+    return imo_number
 
 
 def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int|str:
