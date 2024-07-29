@@ -8,18 +8,18 @@ The IMO ship number scheme has been mandatory, for SOLAS signatories, for passen
 
 An IMO number is made of the three letters "IMO" followed by a seven-digit number. This consists of a six-digit sequential unique number followed by a check digit. The integrity of an IMO number can be verified using its check digit. The checksum of an IMO ship identification number is calculated by multiplying each of the first six digits by a factor of 7 to 2 corresponding to their position from right to left. The rightmost digit of this sum is the check digit.
 
-source: https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_vessel
+source: [Wikipedia, IMO number](https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_vessel "Info on IMO numbers and their checksum")
 
 # Validate Company IMO numbers
 
 The checksum of an IMO company and registered owner identification number is calculated somewhat differently. The first six digits are multiplied by the respective weights: ''8'', ''6'', ''4'', ''2'', ''9'', and ''7'' and then summed. From this sum modulo 11 is taken. The result of which is subtracted from 11. And modulo 10 of this difference results in the check digit.'
 
-credits to wikipedia user for Company IMO checksum: https://en.wikipedia.org/wiki/User:Gotolulu
+credits to wikipedia user for Company IMO checksum: [Wikipedia, user Gotolulu](https://en.wikipedia.org/wiki/User:Gotolulu "Checksum Company IMO number first published by Gotolulu")
 
-source: https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_company
+source: [Wikipedia, Company IMO number](https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_company "Info on Company IMO numbers and their checksum by user Gotolulu")
 
-# Functions in this repo
+# Functions in this repos
 
 - Ability to create however many valid IMO numbers based on the checksum. Output is a list of strings or integers.
 - Ability to validate an IMO number.
-- Ability to validate a Company IMO number. 
+- Ability to validate a Company IMO number.
