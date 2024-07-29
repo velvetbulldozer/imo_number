@@ -20,6 +20,6 @@ source: https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_company
 
 # Functions in this repo
 
-- Ability to create however many valid IMO numbers based on the checksum. Output is a list of string or integers.
+- Ability to create however many valid IMO numbers based on the checksum. Output is a list of strings or integers.
 - Ability to validate an IMO number.
-- Ability to validate a Company IMO number
+- Ability to validate a Company IMO number. 
