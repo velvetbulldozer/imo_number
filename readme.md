@@ -18,7 +18,7 @@ credits to wikipedia user for Company IMO checksum: [Wikipedia, user Gotolulu](h
 
 source: [Wikipedia, Company IMO number](https://en.wikipedia.org/wiki/IMO_number#IMO_number_of_a_company "Info on Company IMO numbers and their checksum by user Gotolulu")
 
-# Functions in this repos
+# Functions in this repo
 
 - Ability to create however many valid IMO numbers based on the checksum. Output is a list of strings or integers.
 - Ability to validate an IMO number.
