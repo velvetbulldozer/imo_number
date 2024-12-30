@@ -29,7 +29,7 @@ def desired_amount(amount: int, output_as_int: bool = True) -> List[int|str]:
     """
 
     imo_number = []
-    
+
     while len(imo_number) < amount:
         created_imo_number = create_imo_number()
         
@@ -54,7 +54,7 @@ def create_imo_number() -> int:
     return imo_number_validator(number)
 
 
-def imo_number_validator_short(imo_number: int|str, output_as_int: bool = True) -> int|str:
+def imo_number_validator_short(imo_number: int|str, output_as_int: bool = True) -> int|str|None:
     """ Validates an IMO number and returns number if valid. 
     If invalid returns None. Optional to change output to strings.
     
@@ -71,18 +71,21 @@ def imo_number_validator_short(imo_number: int|str, output_as_int: bool = True) 
     
     try:
         if len(imo_str) != 7 or not imo_str.isdigit():
-            return False
+            return None
         
         total = sum(int(imo_str[i]) * weights[i] for i in range(6))
         
         if total % 10 == int(imo_str[-1]):
             return imo_int if output_as_int else imo_str
         
+        else:
+            return None
+        
     except (ValueError, IndexError):
         pass
 
 
-def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int|str:
+def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int|str|None:
     """ Validates an IMO number and returns number if valid. 
     If invalid returns None. Optional to change output to strings.
     
@@ -110,7 +113,7 @@ def imo_number_validator(imo_number: int|str, output_as_int: bool = True) -> int
                  return imo_int if output_as_int else imo_str
             
             else:
-                pass
+                return None
     
     except (ValueError, IndexError):
         pass
